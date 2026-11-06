@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Voz Traduzida",
+  "version": "0.3.2",
+  "description": "Traduz sua voz e a fala da reunião no Google Meet e Teams web, usando sua chave Gemini.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Voz Traduzida",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://*.teams.microsoft.com/*",
+        "https://*.teams.live.com/*",
+        "https://*.teams.cloud.microsoft/*"
+      ],
+      "js": [
+        "src/audio-utils.js",
+        "src/pcm-player.js",
+        "src/inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    },
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://*.teams.microsoft.com/*",
+        "https://*.teams.live.com/*",
+        "https://*.teams.cloud.microsoft/*"
+      ],
+      "js": [
+        "src/gemini-translate.js",
+        "src/session-manager.js",
+        "src/status.js",
+        "src/panel-dom.js",
+        "src/content.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "minimum_chrome_version": "119"
+}

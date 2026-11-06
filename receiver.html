@@ -1,0 +1,11 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Áudio da outra pessoa</title>
+<link rel="stylesheet" href="receiver.css"></head><body>
+<h1>Capturar a outra pessoa</h1>
+<p>Clique abaixo, escolha <strong>a aba da chamada do Meet/Teams</strong> e marque <strong>Compartilhar áudio da aba</strong>.</p>
+<button id="start">Selecionar aba com áudio</button><button id="stop">Parar captura</button>
+<p id="status" role="status">Aguardando selecionar a aba.</p><p id="diagnostic"></p>
+<label><input type="checkbox" id="voice"> Ouvir tradução em voz</label>
+<p>As legendas aparecem no painel da reunião. Mantenha esta janela aberta; pode minimizá-la. Fechá-la encerra a captura.</p>
+<p>A voz traduzida toca nesta janela para não voltar para a captura da aba. Use fones.</p>
+<script src="src/audio-utils.js"></script><script src="src/pcm-player.js"></script>
+<script src="src/remote-capture.js"></script><script src="receiver.js"></script></body></html>

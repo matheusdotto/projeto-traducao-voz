@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Voz Traduzida</title>
+    <style>
+      body { width: 280px; margin: 0; padding: 12px; font: 13px/1.4 system-ui, sans-serif; }
+      label { display: block; margin-top: 10px; font-weight: 600; }
+      input, select { width: 100%; box-sizing: border-box; margin-top: 4px; padding: 6px; }
+      h1 { margin: 0; font-size: 14px; }
+      .note { margin: 10px 0 0; color: #5f6368; font-size: 12px; }
+      .saved { min-height: 16px; margin: 8px 0 0; color: #137333; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Voz Traduzida</h1>
+    <label for="key">Chave de API do Gemini</label>
+    <input id="key" type="password" autocomplete="off" spellcheck="false" />
+    <label for="language">Traduzir minha voz para</label>
+    <select id="language">
+      <option value="en">Inglês</option>
+      <option value="es">Espanhol</option>
+      <option value="fr">Francês</option>
+      <option value="de">Alemão</option>
+      <option value="it">Italiano</option>
+      <option value="pt-BR">Português (Brasil)</option>
+    </select>
+    <label for="my-language">Meu idioma, para traduzir a outra pessoa</label>
+    <select id="my-language">
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="en">Inglês</option>
+      <option value="es">Espanhol</option>
+      <option value="fr">Francês</option>
+      <option value="de">Alemão</option>
+      <option value="it">Italiano</option>
+    </select>
+    <p class="saved" id="saved"></p>
+    <p class="note">
+      Na faixa gratuita, o Google pode usar o conteúdo para melhorar os produtos dele. Não use em
+      conversas sensíveis.
+    </p>
+    <p class="note">
+      Ao traduzir a outra pessoa, a voz dela também é enviada ao Google. Avise os participantes.
+    </p>
+    <p class="note">Uma mudança de idioma vale na próxima vez que você ligar a tradução.</p>
+    <script src="popup.js"></script>
+  </body>
+</html>
